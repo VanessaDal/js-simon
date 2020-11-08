@@ -21,9 +21,9 @@ function createRandomArray(minNum, maxNum, quantity){
 
   alert(arrayPc)
 
-  var mioInterval = setInterval(countWithArrayUser, 200);
+  var mioInterval = setInterval(countWithArrayUser, 1000);
 
-  var count = 10;
+  var count = 3; //non ho messo 30 per non farvi aspettare 30 secondi!
   var arrayUser=[];
   var incorrectNum=[];
 
@@ -34,8 +34,13 @@ function countWithArrayUser() {
   } else {
       for (var i=0;i<5;i++){
           var number=parseInt(prompt("Inserisci un numero"))
-          if (arrayPc.includes(number))
+          if (arrayPc.includes(number)){
           arrayUser.push(number);
+            }
+        //   if (arrayUser.includes(number)){
+        //         alert("il numero è già stato inserito")
+        //         i--   
+        //     }
           else{
               incorrectNum.push(number)
           }
@@ -49,13 +54,3 @@ function countWithArrayUser() {
          
     };
 
-
-
-// function check (){
-//     for (var index = 0; index < arrayPc.length; index++) {
-//         if (arrayPc.includes(arrayUser[index]){
-//             arrayUser.splice(index)
-//         } 
-//         console.log(arrayUser)
-//     }
-// }
