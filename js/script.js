@@ -16,6 +16,46 @@ function createRandomArray(minNum, maxNum, quantity){
     return array;
   }
 
-  var arrayPc=createRandomArray(1,20,5)
+  var arrayPc=createRandomArray(1,10,5)
+  console.log(arrayPc)
 
   alert(arrayPc)
+
+  var mioInterval = setInterval(countWithArrayUser, 200);
+
+  var count = 10;
+  var arrayUser=[];
+  var incorrectNum=[];
+
+function countWithArrayUser() {
+  if(count > 0) {
+    console.log(count);
+    count--;
+  } else {
+      for (var i=0;i<5;i++){
+          var number=parseInt(prompt("Inserisci un numero"))
+          if (arrayPc.includes(number))
+          arrayUser.push(number);
+          else{
+              incorrectNum.push(number)
+          }
+          clearInterval(mioInterval);
+      }
+    console.log(arrayUser);
+    console.log(incorrectNum);
+    console.log("Hai ricordato " + arrayUser.length + " numeri:" + arrayUser)
+    return arrayUser;
+         }
+         
+    };
+
+
+
+// function check (){
+//     for (var index = 0; index < arrayPc.length; index++) {
+//         if (arrayPc.includes(arrayUser[index]){
+//             arrayUser.splice(index)
+//         } 
+//         console.log(arrayUser)
+//     }
+// }
